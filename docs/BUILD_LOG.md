@@ -338,3 +338,46 @@ at `855f8a1`. Neither commit on the branch has been pushed.
 - Step 13, pushing `chapter-00-foundation` and opening pull request #1.
 - The positive proof from a fresh clone, the deliberate fixture repair, and
   the first hosted `validate-tooling` run.
+
+## 2026-11-26 Chapter 00 negative proof and pull request #1 draft
+
+### Work done
+
+- **Negative proof.** This ran on `chapter-00-foundation` at `445202b`, Node
+  v26.13.1.
+  1. Line 3 of `fixtures/docs/broken-link.md` was changed to link to the
+     existing `../../README.md`.
+  2. `npm test` exited 1 with 4 passed and 1 failed. The failure was
+     `remark rejects a broken relative link and names the missing file`, with
+     `AssertionError [ERR_ASSERTION]: fixtures/docs/broken-link.md: no issues found`.
+  3. `git checkout -- fixtures/docs/broken-link.md` restored the committed
+     fixture, and `git diff` was then empty.
+  4. The rerun of `npm test` exited 0 with 5 of 5 passing.
+
+  The output is in the negative proof "Observed" field of
+  [Build 00](wiki/Build-00-Foundation.md). The actionlint fixture was not
+  repaired, because the chapter's negative proof covers only the link fixture.
+- **Pull request #1 draft.** Claude drafted the body for
+  `Chapter 00: foundation and independent validation` (base `main`, head
+  `chapter-00-foundation`) in a local file outside this repository. It has
+  these sections: Why, Summary, Evidence, Verification tier claimed,
+  Definition of done, Merge Danger, and Out of scope. The maintainer has seen
+  it. It has not been posted. Its definition-of-done item "The deliberate
+  negative check ran" was written before this run, so it still says the repair
+  is pending.
+
+### Commit
+
+This entry and the negative proof "Observed" field are committed as a new
+commit on top of `445202b`, not as an amend. `445202b` stays reachable from
+`chapter-00-foundation`. After the Q28 amend, amending a log entry into the
+commit it describes left that entry one hash behind, and a separate commit
+avoids that.
+
+### Not done
+
+- Updating the pull request #1 draft for this run, and showing it to the
+  maintainer again.
+- Step 13, pushing `chapter-00-foundation` and opening pull request #1.
+- The first hosted `validate-tooling` run, and the positive proof from a fresh
+  clone. Both evidence records stay `draft`.

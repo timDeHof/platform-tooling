@@ -600,7 +600,24 @@ run `npm test`.
 
 - **Expected:** the broken-link test fails. Restore the fixture, rerun
   `npm test`, and confirm it passes again.
-- **Observed:** pending.
+- **Observed:** 2026-11-26, on `chapter-00-foundation` at `445202b`, Node
+  v26.13.1. Line 3 of `fixtures/docs/broken-link.md` was changed to link to
+  `../../README.md`, which exists. `npm test` exited 1 with 4 passed and 1
+  failed:
+
+  ```text
+  ✖ remark rejects a broken relative link and names the missing file
+    AssertionError [ERR_ASSERTION]: fixtures/docs/broken-link.md: no issues found
+      actual: 0,
+      expected: 0,
+      operator: 'notStrictEqual',
+  ```
+
+  The exit-code assertion failed first, because remark exited 0 once the link
+  resolved. The other 4 tests passed. `git checkout -- fixtures/docs/broken-link.md`
+  restored the committed fixture, and `git diff` was then empty. The rerun of
+  `npm test` exited 0 with 5 of 5 passing. The actionlint fixture was not
+  repaired in this run.
 
 ## Evidence and limitations
 
