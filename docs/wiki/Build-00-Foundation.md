@@ -720,18 +720,21 @@ Chapter 00 is done when all of the following are true:
 
 - [ ] Pull request #1 merged, with `validate-tooling` succeeding at its head
       commit.
-- [ ] The positive proof passed from a fresh clone, and its record is in
-      `docs/evidence/00-local.json`.
-- [ ] The negative proof passed, including the deliberate fixture repair and
-      restore.
-- [ ] The hosted run is recorded in `docs/evidence/00-actions.json`.
-- [ ] Secret scanning and push protection show as `enabled`, with before and
-      after output recorded.
+- [x] The positive proof passed from a fresh clone, and its record is in
+      `docs/evidence/00-local.json`. It ran at `78b087a` on 2026-11-26.
+- [x] The negative proof passed, including the deliberate fixture repair and
+      restore. It ran at `445202b` on 2026-11-26.
+- [x] The hosted run is recorded in `docs/evidence/00-actions.json`. That is
+      run 45905985053 at `fda04ab`.
+- [x] Secret scanning and push protection show as `enabled`, with before and
+      after output recorded. Both were already on, so one read serves as the
+      before and the after (step 12).
 - [ ] Every "Observed" field in this chapter is filled in, and its status is
-      updated from draft.
+      updated from draft. Every "Observed" field is filled in. The status stays
+      draft until pull request #1 merges.
 - [ ] Vault note 22.16 is marked superseded and points at this repository
       (build log Q8).
-- [ ] The build log has an entry for the implementation work.
+- [x] The build log has an entry for the implementation work.
 
 ## Navigation
 
