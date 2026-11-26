@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "chapter": "00",
+  "status": "draft",
+  "tooling_revision": null,
+  "consumer_revision": null,
+  "documentation_revision": null,
+  "verified_at": null,
+  "environment": null,
+  "positive_check": { "expected": "npm run validate exits 0 in a fresh clone", "observed": null },
+  "negative_check": { "expected": "both fixtures rejected with the file and problem named", "observed": null },
+  "run_url": null,
+  "limitations": ["Implementation checks have not run"]
+}

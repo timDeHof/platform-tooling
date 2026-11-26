@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "chapter": "00",
+  "status": "draft",
+  "tooling_revision": null,
+  "consumer_revision": null,
+  "documentation_revision": null,
+  "verified_at": null,
+  "environment": null,
+  "positive_check": { "expected": "validate-tooling succeeds on pull request #1", "observed": null },
+  "negative_check": { "expected": "fixture tests reject both fixtures in the hosted run", "observed": null },
+  "run_url": null,
+  "limitations": ["Implementation checks have not run"]
+}
