@@ -1,6 +1,6 @@
 # 0001. Services stay independent and call a pinned shared workflow
 
-- **Status:** Proposed
+- **Status:** Accepted on 2026-11-26 by the tooling maintainer
 - **Date:** 2026-11-26
 - **Decider:** the tooling maintainer
 - **Related:** [build log](../BUILD_LOG.md) decisions Q2, Q19, and Q25

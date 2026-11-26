@@ -425,3 +425,44 @@ That run is not the one recorded here.
 - The `push` run on `main` after merge.
 - Merging pull request #1, which the maintainer does (Q9).
 - Review of ADR 0001, which stays Proposed.
+
+## 2026-11-26 ADR 0001 accepted
+
+### Decision
+
+The maintainer accepted
+[ADR 0001](decisions/0001-services-stay-independent.md), "Services stay
+independent and call a pinned shared workflow". Its status changed from
+Proposed to Accepted on 2026-11-26. The decision text, alternatives,
+consequences, validation criteria, and revisit conditions are unchanged.
+
+### Work done
+
+- Changed the ADR's status line to `Accepted on 2026-11-26 by the tooling
+  maintainer`.
+- Updated the pages that stated the ADR's current status, so that they agree
+  with it:
+  - [Architecture](wiki/Architecture.md) now says the ADR is Accepted.
+  - The decision rationale and step 11 in
+    [Build 00](wiki/Build-00-Foundation.md) now record the acceptance.
+  - The "Next action" in [Roadmap](wiki/Roadmap.md) no longer asks for a
+    review of the ADR.
+- Earlier build log entries that call the ADR Proposed were left unchanged,
+  because they record what was true when they were written.
+
+### Commit
+
+This is a new commit on top of `5aec698` on `chapter-00-foundation`.
+
+### Not done
+
+- The positive proof from a fresh clone. `docs/evidence/00-local.json` stays
+  `draft`.
+- Merging pull request #1. A merge commit keeps the commits cited in this log
+  and in `docs/evidence/00-actions.json` (`445202b`, `fda04ab`, and `5aec698`)
+  in the history of `main`. A squash merge or a rebase merge would give `main`
+  new commits with different hashes.
+- The pull request #1 body still says ADR 0001 is Proposed and that merging
+  does not approve it. It has not been edited.
+- The ADR's first validation criterion, the pilot service adopting a pinned
+  caller, cannot be checked until Chapter 05.

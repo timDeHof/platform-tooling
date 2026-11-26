@@ -10,7 +10,7 @@ The goal is shared CI for independent JS/TS services: a versioned reusable
 Node CI workflow, security checks, and an aggregate gate that one real service
 uses first. The reasons services stay independent are recorded in
 [ADR 0001](../decisions/0001-services-stay-independent.md), which is
-Proposed.
+Accepted.
 
 ## Components
 

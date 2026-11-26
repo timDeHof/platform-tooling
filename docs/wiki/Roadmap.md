@@ -53,5 +53,6 @@ These are excluded from the initial release (plan section 1):
 
 ## Next action
 
-Review [ADR 0001](../decisions/0001-services-stay-independent.md), then run the
-Chapter 00 steps.
+Run the Chapter 00 positive proof from a fresh clone, then merge pull
+request #1. [ADR 0001](../decisions/0001-services-stay-independent.md) is
+Accepted.

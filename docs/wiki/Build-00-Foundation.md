@@ -89,8 +89,8 @@ scripts, so it does not rely on the reusable workflows it will later test.
 **Why services stay independent.** Each service keeps its repository,
 application scripts, deployment settings, and credentials, and calls a pinned
 shared workflow. ADR 0001 records the alternatives, such as a service
-monorepo, and the conditions for revisiting this. Its status is Proposed until
-the maintainer approves it.
+monorepo, and the conditions for revisiting this. The maintainer accepted it
+on 2026-11-26.
 
 **Why negative proofs are fixtures.** The plan first described a disposable
 broken edit that is made and then reverted. A committed fixture that the test
@@ -426,7 +426,8 @@ values:
     this chapter.
   - [Architecture](Architecture.md), [Roadmap](Roadmap.md), and
     [ADR 0001](../decisions/0001-services-stay-independent.md) with status
-    Proposed. All three were drafted on 2026-11-26 and need review.
+    Proposed. All three were drafted on 2026-11-26. The maintainer accepted
+    ADR 0001 the same day.
   - `.github/pull_request_template.md`, the definition-of-done checklist from
     the plan's section 8 (build log Q20).
   - `.github/workflows/validate-tooling.yml`, sketched below.
