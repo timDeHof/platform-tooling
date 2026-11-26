@@ -466,3 +466,41 @@ This is a new commit on top of `5aec698` on `chapter-00-foundation`.
   does not approve it. It has not been edited.
 - The ADR's first validation criterion, the pilot service adopting a pinned
   caller, cannot be checked until Chapter 05.
+
+## 2026-11-26 Chapter 00 positive proof from a fresh clone
+
+### Work done
+
+- Cloned `https://github.com/timDeHof/platform-tooling.git` into a new, empty
+  scratch directory outside the working copy, then switched to
+  `chapter-00-foundation` at `78b087a`
+  (`78b087a985ac5205b871eee1affb3f99a4d95ecb`).
+- Ran `nvm use`, `npm ci`, and `npm run validate`, following the chapter's
+  positive proof.
+- Filled in the positive proof "Observed" field in
+  [Build 00](wiki/Build-00-Foundation.md).
+- Moved `docs/evidence/00-local.json` to `locally verified`.
+
+### Results
+
+- `nvm use` selected Node v26.13.1 with npm 11.20.0 from `.nvmrc`.
+- `npm ci` exited 0, with `added 242 packages` and the 13 audit findings
+  accepted under Q26. It ran twice, because the first run's output was cut to
+  its last lines.
+- `npm run validate` exited 0. It reported 0 markdownlint issues across 7
+  files, no actionlint findings, and 5 of 5 tests passing.
+- `git status --short` in the clone was empty afterwards.
+- The run took place between 22:46:03Z and 22:46:12Z by `date -u`.
+
+### Commit
+
+This entry, the "Observed" field, and the evidence record are a new commit on
+top of `78b087a`. Both Chapter 00 evidence records are now past `draft`.
+
+### Not done
+
+- Merging pull request #1 with a merge commit, which the maintainer does.
+- The `push` run on `main` after merge.
+- The pull request #1 body still says ADR 0001 is Proposed and that the
+  fresh-clone proof has not run. It has not been edited.
+- The Completion checklist in Build 00 has not been ticked.

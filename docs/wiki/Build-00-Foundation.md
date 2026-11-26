@@ -39,9 +39,9 @@ verified**. It has no consumer, so consumer verification does not apply.
 ## Status and tested environment
 
 **Status:** draft. Steps 1 to 13 ran on 2026-11-26, and their "Observed"
-fields hold that output. Steps 6 to 11 ran before steps 1 to 5. The hosted
-record `docs/evidence/00-actions.json` is GitHub Actions verified. The local
-record stays `draft` until the fresh-clone positive proof runs. The evidence
+fields hold that output. Steps 6 to 11 ran before steps 1 to 5. The positive
+and negative proofs ran the same day. `docs/evidence/00-local.json` is locally
+verified, and `docs/evidence/00-actions.json` is GitHub Actions verified. The evidence
 records stay in `draft`, because the full positive proof has not run.
 
 **Authored on:** macOS (Darwin 27.2.0) with nvm 0.40.2, git 2.56.0, gh
@@ -607,7 +607,26 @@ npm run validate
 ```
 
 - **Expected:** `npm run validate` exits 0.
-- **Observed:** pending.
+- **Observed:** 2026-11-26, in a new, empty scratch directory outside the
+  working copy. The clone started at 22:46:03Z by `date -u`.
+  - `git clone` printed `Cloning into 'platform-tooling'...`.
+  - `git switch chapter-00-foundation` printed
+    `Switched to a new branch 'chapter-00-foundation'`, and `HEAD` was
+    `78b087a985ac5205b871eee1affb3f99a4d95ecb`.
+  - `nvm use` found `.nvmrc` with version 26 and printed
+    `Now using node v26.13.1 (npm v11.20.0)`.
+  - `npm ci` exited 0. It ran twice, because the first run's output was cut
+    to its last lines. The second run printed
+    `added 242 packages, and audited 243 packages` and the 13 accepted audit
+    findings (build log Q26).
+  - `npm run validate` exited 0. markdownlint printed
+    `Summary: 0 issues in 0 files` across 7 files, actionlint printed
+    nothing, and `node --test` printed `ℹ pass 5` and `ℹ fail 0`.
+  - The run finished at 22:46:12Z by `date -u`, and `git status --short` in
+    the clone was empty.
+
+  The environment was macOS Darwin 27.2.0, git 2.56.0, and actionlint 1.7.12
+  from Homebrew.
 
 The hosted proof is the `validate-tooling` check on pull request #1 succeeding
 at the pull request's head commit.
