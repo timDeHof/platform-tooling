@@ -1,14 +1,27 @@
 {
   "schema_version": 1,
   "chapter": "00",
-  "status": "draft",
-  "tooling_revision": null,
+  "status": "GitHub Actions verified",
+  "tooling_revision": "fda04ab8a199fe6925d2a9764553a040a8e4d488",
   "consumer_revision": null,
-  "documentation_revision": null,
-  "verified_at": null,
-  "environment": null,
-  "positive_check": { "expected": "validate-tooling succeeds on pull request #1", "observed": null },
-  "negative_check": { "expected": "fixture tests reject both fixtures in the hosted run", "observed": null },
-  "run_url": null,
-  "limitations": ["Implementation checks have not run"]
+  "documentation_revision": "fda04ab8a199fe6925d2a9764553a040a8e4d488",
+  "verified_at": "2026-11-26T22:37:53Z",
+  "environment": "GitHub-hosted runner, image ubuntu-26.04 version 20261116.88.1, Node v26.13.1 from .nvmrc, actionlint 1.7.12 linux_amd64 with sha256 checked",
+  "event": "pull_request",
+  "check_name": "validate-tooling / validate",
+  "pull_request_url": "https://github.com/timDeHof/platform-tooling/pull/1",
+  "positive_check": {
+    "expected": "validate-tooling succeeds on pull request #1",
+    "observed": "Run 45905985053 concluded success. npm run validate printed 'Summary: 0 issues in 0 files', 'ℹ pass 5', and 'ℹ fail 0'."
+  },
+  "negative_check": {
+    "expected": "fixture tests reject both fixtures in the hosted run",
+    "observed": "Both fixture tests passed within the 5 of 5, so remark and actionlint rejected their fixtures on the runner."
+  },
+  "run_url": "https://github.com/timDeHof/platform-tooling/actions/runs/45905985053",
+  "limitations": [
+    "Covers the pull_request event at fda04ab only. The push-to-main run after merge is not recorded.",
+    "This record was committed after fda04ab, so the run it describes did not include this record.",
+    "The deliberate fixture repair ran locally, not on the runner."
+  ]
 }

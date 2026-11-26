@@ -38,9 +38,10 @@ verified**. It has no consumer, so consumer verification does not apply.
 
 ## Status and tested environment
 
-**Status:** draft. Steps 1 to 12 ran on 2026-11-26, and their "Observed"
-fields hold that output. Steps 6 to 11 ran before steps 1 to 5. Step 13 is
-pending. The evidence
+**Status:** draft. Steps 1 to 13 ran on 2026-11-26, and their "Observed"
+fields hold that output. Steps 6 to 11 ran before steps 1 to 5. The hosted
+record `docs/evidence/00-actions.json` is GitHub Actions verified. The local
+record stays `draft` until the fresh-clone positive proof runs. The evidence
 records stay in `draft`, because the full positive proof has not run.
 
 **Authored on:** macOS (Darwin 27.2.0) with nvm 0.40.2, git 2.56.0, gh
@@ -565,7 +566,29 @@ gh pr create --base main --title "Chapter 00: foundation and independent validat
   GitHub Actions tier.
 - **Expected:** the pull request shows a `validate-tooling` check that
   succeeds.
-- **Observed:** pending.
+- **Observed:** 2026-11-26, run after the maintainer approved the push and the
+  full pull request body. `git push -u origin chapter-00-foundation` created
+  the remote branch at `fda04ab`, and `gh pr create` printed
+  `https://github.com/timDeHof/platform-tooling/pull/1`. The `validate-tooling`
+  workflow ran its `validate` job as
+  [run 45905985053](https://github.com/timDeHof/platform-tooling/actions/runs/45905985053)
+  on event `pull_request` at head
+  `fda04ab8a199fe6925d2a9764553a040a8e4d488`. The job started at
+  2026-11-26T22:37:36Z, completed at 2026-11-26T22:37:53Z, and concluded
+  `success`. The runner image was `ubuntu-26.04` version `20261116.88.1`, and
+  setup-node installed Node `v26.13.1` from `.nvmrc`. The log showed:
+
+  ```text
+  /home/runner/work/_temp/actionlint_1.7.12_linux_amd64.tar.gz: OK
+  Summary: 0 issues in 0 files
+  ℹ pass 5
+  ℹ fail 0
+  ```
+
+  This was the first run of the workflow's curl, `sha256sum`, and
+  `GITHUB_PATH` lines on Linux. Socket Security and GitGuardian checks from
+  third-party apps on the account also passed. This repository does not
+  configure them.
 
 ## Verification
 

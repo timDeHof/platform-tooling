@@ -381,3 +381,47 @@ avoids that.
 - Step 13, pushing `chapter-00-foundation` and opening pull request #1.
 - The first hosted `validate-tooling` run, and the positive proof from a fresh
   clone. Both evidence records stay `draft`.
+
+## 2026-11-26 Chapter 00 step 13 and the first hosted run
+
+### Work done
+
+- After the maintainer approved the full body text, Claude pushed
+  `chapter-00-foundation` at `fda04ab` and opened
+  [pull request #1](https://github.com/timDeHof/platform-tooling/pull/1)
+  against `main`.
+- The pull request triggered `validate-tooling`
+  [run 45905985053](https://github.com/timDeHof/platform-tooling/actions/runs/45905985053)
+  on event `pull_request` at head
+  `fda04ab8a199fe6925d2a9764553a040a8e4d488`. It concluded `success` at
+  2026-11-26T22:37:53Z.
+- Filled in the step 13 "Observed" field in
+  [Build 00](wiki/Build-00-Foundation.md).
+- Moved `docs/evidence/00-actions.json` to `GitHub Actions verified`, with the
+  run URL, the head SHA, the runner environment, and the observed results.
+
+### Results
+
+- The runner used image `ubuntu-26.04` version `20261116.88.1` and Node
+  `v26.13.1` from `.nvmrc`.
+- The actionlint archive passed its sha256 check on Linux
+  (`actionlint_1.7.12_linux_amd64.tar.gz: OK`). This was the first run of
+  those workflow lines.
+- `npm run validate` printed `Summary: 0 issues in 0 files`, `ℹ pass 5`, and
+  `ℹ fail 0`.
+- Socket Security and GitGuardian checks from third-party apps on the account
+  also ran and passed. This repository does not configure them.
+
+### Commit
+
+This entry, the step 13 "Observed" field, and the evidence record are a new
+commit on top of `fda04ab`. Pushing it triggers another `validate-tooling` run.
+That run is not the one recorded here.
+
+### Not done
+
+- The positive proof from a fresh clone. `docs/evidence/00-local.json` stays
+  `draft`.
+- The `push` run on `main` after merge.
+- Merging pull request #1, which the maintainer does (Q9).
+- Review of ADR 0001, which stays Proposed.
