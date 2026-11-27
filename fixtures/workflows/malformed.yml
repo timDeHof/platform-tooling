@@ -1,0 +1,5 @@
+on: push
+jobs:
+  broken:
+    steps:
+      - run: echo "never runs"

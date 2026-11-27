@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "chapter": "00",
+  "status": "locally verified",
+  "tooling_revision": "78b087a985ac5205b871eee1affb3f99a4d95ecb",
+  "consumer_revision": null,
+  "documentation_revision": "78b087a985ac5205b871eee1affb3f99a4d95ecb",
+  "verified_at": "2026-11-26T22:46:12Z",
+  "environment": "Fresh clone of https://github.com/timDeHof/platform-tooling.git in an empty scratch directory on macOS Darwin 27.2.0, Node v26.13.1 via nvm from .nvmrc, npm 11.20.0, actionlint 1.7.12 from Homebrew, git 2.56.0",
+  "positive_check": {
+    "expected": "npm run validate exits 0 in a fresh clone",
+    "observed": "npm ci exited 0 and npm run validate exited 0 at 78b087a. markdownlint printed 'Summary: 0 issues in 0 files' across 7 files, actionlint printed nothing, and node --test printed 'ℹ pass 5' and 'ℹ fail 0'. git status --short in the clone was empty afterwards."
+  },
+  "negative_check": {
+    "expected": "both fixtures rejected with the file and problem named",
+    "observed": "In the fresh-clone run, both fixture tests passed, so both checkers rejected their fixtures and named the problem. In the working copy at 445202b, the link fixture was repaired: npm test failed 1 of 5 with 'fixtures/docs/broken-link.md: no issues found', then passed 5 of 5 after git checkout restored it."
+  },
+  "run_url": null,
+  "limitations": [
+    "actionlint comes from Homebrew on the machine, not from the repository lockfile.",
+    "This record was committed after 78b087a, so the run it describes did not include this record.",
+    "The deliberate fixture repair ran in the working copy at 445202b, not in the fresh clone.",
+    "npm audit reported 13 findings (4 low, 9 moderate), accepted under build log Q26."
+  ]
+}

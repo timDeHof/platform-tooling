@@ -1,0 +1,16 @@
+{
+  "name": "platform-tooling",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate:docs": "markdownlint-cli2 \"**/*.md\" \"#node_modules\" \"#fixtures\" && remark --frail --quiet --no-stdout README.md docs .github",
+    "validate:workflows": "actionlint",
+    "test": "node --test",
+    "validate": "npm run validate:docs && npm run validate:workflows && npm test"
+  },
+  "devDependencies": {
+    "markdownlint-cli2": "^0.24.2",
+    "remark-cli": "^12.0.1",
+    "remark-validate-links": "^13.1.0"
+  }
+}
